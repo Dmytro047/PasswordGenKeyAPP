@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <form method="post">
+        <h1 class="display-4">Bienvenidos!</h1>
+        <p>Para generar una nueva contrasena segura preciona el boton de abajo.</p>
+        <h2>@IndexModel.Password</h2>
+        <input type="submit" value="Generar contrasena." />
+    </form>
+</div>
