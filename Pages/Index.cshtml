@@ -5,10 +5,16 @@
 }
 
 <div class="text-center">
+    <h1 class="display-4">Bienvenidos!</h1>
+    <p>Para generar una nueva contrasena segura preciona el boton de abajo.</p>
+    @if (!string.IsNullOrEmpty(@IndexModel.ErrorMSG))
+    {
+<span class="alert-danger">@IndexModel.ErrorMSG</span>}
+
     <form method="post">
-        <h1 class="display-4">Bienvenidos!</h1>
-        <p>Para generar una nueva contrasena segura preciona el boton de abajo.</p>
-        <h2>@IndexModel.Password</h2>
-        <input type="submit" value="Generar contrasena." />
+        <input type="text" name="UserName" placeholder="Ingrese su nombre" />
+        <input type="text" name="Password" value="@IndexModel.User.Password" disabled />
+
+        <input type="submit" value="Guardar Usuario" />
     </form>
 </div>
